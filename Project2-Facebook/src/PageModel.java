@@ -148,7 +148,6 @@ public class PageModel {
 	
 	public String[] filterBy(String s) {
 		ArrayList<User> res = new ArrayList<User>();
-		
 		if (!s.equals("")) {
 			for (User u : users) {
 				if (u.getName().toLowerCase().contains(s.toLowerCase())) {
@@ -157,9 +156,7 @@ public class PageModel {
 			}
 			return setStringNames(res);
 		}
-		
-		return userNames;
-		
+		return setStringNames(users);
 	}
 	
 	public void openFile(String s) {
@@ -171,5 +168,15 @@ public class PageModel {
 			System.out.println("File could not be found.");
 			System.exit(1);
 		}
+	}
+	
+	public boolean compareUser(String s) {
+		for (User u : users) {
+			System.out.println("Comparing");
+			if (u.getName().equals(s)) {
+				return true;
+			}
+		}
+		return false;
 	}
 }

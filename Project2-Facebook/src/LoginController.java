@@ -6,11 +6,13 @@ public class LoginController {
 	private LoginView m_view;
 	private PageView p_view;
 	private NewFeed f_view;
-	LoginController(LoginModel model, LoginView view, PageView pview, NewFeed fview) {
+	private OtherUserView u_view;
+	LoginController(LoginModel model, LoginView view, PageView pview, NewFeed fview, OtherUserView uview) {
 		m_model = model;
 		m_view = view;
 		p_view = pview;
 		f_view = fview;
+		u_view = uview;
 		
 		m_view.addLoginActionListener(new LoginListener());
 	}
@@ -22,6 +24,7 @@ public class LoginController {
 				m_view.setVisible(false);
 				p_view.setVisible(true);
 				f_view.setVisible(true);
+				u_view.setVisible(false);
 				m_view.reset();	
 			}
 			else {

@@ -4,6 +4,7 @@ import java.io.IOException;
 import javax.swing.JFileChooser;
 import javax.swing.JFrame;
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class PageController {
 	private PageModel p_model;
@@ -66,10 +67,14 @@ public class PageController {
 			p_view.initSearchBar(p_model.filterBy(p_view.getSearchBarText()));
 		}
 		public void keyReleased(KeyEvent key) {
-			
+			if (key.getKeyCode() == KeyEvent.VK_ENTER) {
+				if(p_model.compareUser(p_view.getSearchBarText())) {
+					System.out.println(p_view.getSearchBarText());
+				}
+			}
 		}
 		public void keyTyped(KeyEvent key) {
-			
+
 		}
 	}
 }

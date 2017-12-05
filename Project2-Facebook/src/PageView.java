@@ -22,7 +22,9 @@ public class PageView extends JFrame{
 	
 	PageView(PageModel p_model) {
 		model = p_model;
-		
+
+		searchBar.setEditable(true);
+		searchBar.setSelectedItem("");
 
 		master.setLayout(new GridLayout(2,2));
 		
@@ -55,12 +57,14 @@ public class PageView extends JFrame{
 	}
 	
 	void initSearchBar(String[] vals) {
-		searchBar.removeAll();
+		String temp = searchBar.getEditor().getItem().toString();
+		searchBar.getEditor().getItem().toString();
+		searchBar.removeAllItems();
+		
 		for (String val : vals) {
 			searchBar.addItem(val);
 		}
-		searchBar.setEditable(true);
-		searchBar.setSelectedItem("");
+		searchBar.setSelectedItem(temp);
 	}
 	
 	void setMyFeed(ArrayList<String> feed) {
@@ -81,7 +85,7 @@ public class PageView extends JFrame{
 	}
 	
 	String getSearchBarText() {
-		return searchBar.getSelectedItem().toString();
+		return searchBar.getEditor().getItem().toString();
 	}
 	
 	void setNewsFeed(ArrayList<User> list) {
@@ -127,7 +131,7 @@ public class PageView extends JFrame{
 	}
 	
 	void addFilterListener(KeyListener key) {
-		searchBar.addKeyListener(key);
+		searchBar.getEditor().getEditorComponent().addKeyListener(key);
 	}
 	
 	void align() {

@@ -1,0 +1,18 @@
+README
+
+Input Files: 
+
+	FriendsList.txt:
+		A list of full names that are the user's friends
+		Nothing else is needed
+		
+	Friends.txt:
+		Specify the number of people on the file
+		Name of the user
+		A list of texts that the user has uploaded to the site
+		
+	Account.txt
+		Name of the user
+		The location of the starting image
+		list of texts that the user has uploaded to the site
+		
